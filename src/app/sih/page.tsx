@@ -16,7 +16,7 @@ export default function SihPage() {
       <p style={{ marginBottom: 12 }}>
         If you are not forwarded automatically, <a href="https://www.sih.gov.in">click here</a>.
       </p>
-      <small>Loading — this page ensures Vercel&apos;s security check runs before redirect.</small>
+      <small>Loading — this page ensures GoShield&apos;s security check runs before redirect.</small>
       <noscript style={{ marginTop: 12 }}>
         <p>JavaScript is disabled — <a href="https://www.sih.gov.in">open the SIH Website</a>.</p>
       </noscript>
