@@ -16,7 +16,7 @@ export default function AmazonPage() {
       <p style={{ marginBottom: 12 }}>
         If you are not forwarded automatically, <a href="https://amazon.com">click here</a>.
       </p>
-      <small>Loading — this page ensures Vercel&apos;s security check runs before redirect.</small>
+      <small>Loading — this page ensures GoShield&apos;s security check runs before redirect.</small>
       <noscript style={{ marginTop: 12 }}>
         <p>JavaScript is disabled — <a href="https://amazon.com">open Amazon</a>.</p>
       </noscript>
