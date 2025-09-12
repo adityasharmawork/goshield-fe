@@ -552,6 +552,12 @@ const protectedSites = [
     description: "Event portal for SIH with public-facing services.",
     url: "https://goshield-fe.vercel.app/sih",
   },
+  {
+    id: "drdo-site",
+    name: "DRDO Website",
+    description: "Event portal for SIH with public-facing services.",
+    url: "https://goshield-fe.vercel.app/drdo",
+  },
 ];
 
 // --- Main Page Component ---
