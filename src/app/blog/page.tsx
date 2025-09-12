@@ -29,7 +29,6 @@
 
 
 
-
 // src/app/blog/page.tsx
 'use client';
 
@@ -58,25 +57,22 @@ const securityChecks = [
 
 // --- Main Page Component ---
 export default function BlogPage() {
-  // State to track the status of each check: 'running', or 'passed'
   const [activeCheckIndex, setActiveCheckIndex] = useState(0);
 
   useEffect(() => {
     const REAL_BLOG_URL = 'https://syntax-void.onrender.com';
     const totalChecks = securityChecks.length;
 
-    // If all checks are done, wait a moment then redirect
     if (activeCheckIndex >= totalChecks) {
       const redirectTimer = setTimeout(() => {
         window.location.replace(REAL_BLOG_URL);
-      }, 1200); // Wait 1.2s after the final check passes
+      }, 1200);
       return () => clearTimeout(redirectTimer);
     }
 
-    // Move to the next check after a delay
     const checkTimer = setTimeout(() => {
       setActiveCheckIndex(activeCheckIndex + 1);
-    }, 1500); // Each check takes 1.5s
+    }, 1500);
 
     return () => clearTimeout(checkTimer);
   }, [activeCheckIndex]);
@@ -103,7 +99,6 @@ export default function BlogPage() {
             const isPassed = activeCheckIndex > index;
             const isRunning = activeCheckIndex === index;
             
-            // Only render checks that are passed or currently running
             if (activeCheckIndex < index) return null;
 
             return (
@@ -148,7 +143,7 @@ export default function BlogPage() {
 }
 
 // --- Individual Check Item Component ---
-const CheckItem = ({ Icon, text, status }) => {
+const CheckItem = ({ icon, text, status }: { icon: React.ReactNode, text: string, status: string }) => {
   return (
     <motion.div
       layout
