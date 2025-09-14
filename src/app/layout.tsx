@@ -26,6 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+        <script src="https://files.bpcontent.cloud/2025/09/14/13/20250914132641-P64DXPZJ.js" defer></script>
+    
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
