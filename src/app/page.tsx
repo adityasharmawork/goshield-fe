@@ -520,6 +520,7 @@ import {
   YAxis,
 } from "recharts";
 import Globe from "../../globe"; // <-- expects file at /globe.tsx
+import ProtectedContent from "./components/ProtectedComponent";
 
 // --- Data for the Demo Chart ---
 const attackData = [
@@ -577,6 +578,7 @@ export default function GoShieldLandingPage() {
           {/* Place globe where you want it */}
           <Globe />
         </div>
+        <ProtectedContent />
       </main>
       <Footer />
     </div>
