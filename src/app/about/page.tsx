@@ -14,15 +14,16 @@ import {
   BarChart2,
   Server,
 } from "lucide-react";
-// Globe component not found in this repo at ../../globe — using an inline placeholder here to prevent build errors.
-const Globe = () => (
+
+// Placeholder Globe component (replace with your real Globe or correct import)
+const Globe: React.FC = () => (
   <div className="w-full h-64 rounded-2xl bg-gradient-to-r from-indigo-700/20 to-teal-600/10 border border-white/6 flex items-center justify-center text-slate-400">
     Globe placeholder — replace with your actual Globe component or correct import path (e.g. import Globe from '@/components/Globe')
   </div>
 );
 
-// --- About Page (single-file, matches landing layout but more professional) ---
-export default function AboutPage() {
+// ---------- Page ----------
+export default function AboutPage(): JSX.Element {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-950 to-black text-slate-100 antialiased">
       <Header />
@@ -54,8 +55,8 @@ export default function AboutPage() {
   );
 }
 
-// ---------- Header & Footer (keeps look consistent with landing page) ----------
-const Header = () => (
+// ---------- Header & Footer ----------
+const Header: React.FC = (): JSX.Element => (
   <header className="sticky top-0 z-50 backdrop-blur-xl bg-slate-900/60 border-b border-white/5">
     <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <div className="flex items-center gap-3 cursor-pointer">
@@ -82,7 +83,7 @@ const Header = () => (
   </header>
 );
 
-const Footer = () => (
+const Footer: React.FC = (): JSX.Element => (
   <footer className="border-t border-white/5 pt-12 pb-8">
     <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
       <div className="flex items-center gap-3">
@@ -103,7 +104,7 @@ const Footer = () => (
 );
 
 // ---------- Sections ----------
-const Hero = () => (
+const Hero: React.FC = (): JSX.Element => (
   <section className="py-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
     <div>
       <div className="inline-flex items-center gap-2 text-sm rounded-full bg-white/5 px-4 py-2 text-indigo-300 border border-white/10">
@@ -164,7 +165,7 @@ const Hero = () => (
   </section>
 );
 
-function StatCard({ label, value, icon }: { label: string; value: string; icon?: React.ReactNode }) {
+function StatCard({ label, value, icon }: { label: string; value: string; icon?: React.ReactNode }): JSX.Element {
   return (
     <div className="p-4 rounded-lg bg-slate-900/40 border border-white/6 flex items-center gap-4">
       <div className="w-10 h-10 rounded-md bg-gradient-to-r from-indigo-600 to-cyan-400 flex items-center justify-center text-white">{icon}</div>
@@ -176,7 +177,7 @@ function StatCard({ label, value, icon }: { label: string; value: string; icon?:
   );
 }
 
-const MissionValues = () => (
+const MissionValues: React.FC = (): JSX.Element => (
   <section className="py-12">
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
       <motion.div whileHover={{ y: -6 }} className="rounded-2xl p-6 bg-slate-900/50 border border-white/10">
@@ -208,7 +209,7 @@ const MissionValues = () => (
   </section>
 );
 
-const WhoWeAre = () => (
+const WhoWeAre: React.FC = (): JSX.Element => (
   <section className="py-12">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
       <div>
@@ -249,8 +250,14 @@ const WhoWeAre = () => (
 );
 
 // ---------- Team ----------
-const TeamSection = () => {
-  const team = [
+interface TeamMember {
+  name: string;
+  role: string;
+  bio: string;
+}
+
+const TeamSection: React.FC = (): JSX.Element => {
+  const team: TeamMember[] = [
     { name: "Priya Nair", role: "CTO — Head of Detection", bio: "Former SRE at a hyperscaler. Focus: ML-based anomaly detection." },
     { name: "Arjun Verma", role: "Head of SOC", bio: "Ex-national CERT operator; incident response & playbooks." },
     { name: "Meera Singh", role: "VP, Product", bio: "Built observability and mitigation controls at scale." },
@@ -285,7 +292,7 @@ const TeamSection = () => {
   );
 };
 
-const ImpactStats = () => (
+const ImpactStats: React.FC = (): JSX.Element => (
   <section className="py-12">
     <div className="rounded-2xl p-8 bg-gradient-to-br from-indigo-700/20 to-violet-900/10 border border-white/6">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
@@ -304,7 +311,7 @@ const ImpactStats = () => (
   </section>
 );
 
-function ImpactItem({ label, value }: { label: string; value: string }) {
+function ImpactItem({ label, value }: { label: string; value: string }): JSX.Element {
   return (
     <div className="p-4 rounded-lg bg-slate-900/40 border border-white/6 text-center">
       <div className="text-slate-400 text-sm">{label}</div>
@@ -313,8 +320,8 @@ function ImpactItem({ label, value }: { label: string; value: string }) {
   );
 }
 
-// ---------- Timeline (company milestones) ----------
-const Timeline = () => {
+// ---------- Timeline ----------
+const Timeline: React.FC = (): JSX.Element => {
   const events = [
     { year: "2019", title: "Founded", desc: "Founded by security engineers from cloud and telecom." },
     { year: "2020", title: "First PoP", desc: "Launched our first public scrubbing PoP and initial customers." },
@@ -343,7 +350,7 @@ const Timeline = () => {
 };
 
 // ---------- FAQ ----------
-const FAQSection = () => {
+const FAQSection: React.FC = (): JSX.Element => {
   const faqs = [
     { q: "How fast is onboarding?", a: "Typically minutes for DNS change; full SOC integration in days." },
     { q: "Do you keep logs for audits?", a: "Yes — we provide configurable audit logs and exportable forensic reports." },
@@ -365,7 +372,7 @@ const FAQSection = () => {
   );
 };
 
-const FinalCTASection = () => (
+const FinalCTASection: React.FC = (): JSX.Element => (
   <section id="contact" className="my-12 rounded-2xl p-8 md:p-12 bg-gradient-to-br from-indigo-700/40 to-violet-900/30 border border-white/10 shadow-2xl">
     <div className="md:flex items-center justify-between gap-8 text-center md:text-left">
       <div>
@@ -380,11 +387,7 @@ const FinalCTASection = () => (
 );
 
 // ---------- Small helper components ----------
-
-// The following small components are inline for simplicity and previewability —
-// we can extract them into shared components later if you want.
-
-function TeamCard({ name, role, bio }: { name: string; role: string; bio: string }) {
+function TeamCard({ name, role, bio }: { name: string; role: string; bio: string }): JSX.Element {
   return (
     <div className="rounded-2xl p-4 bg-slate-900/50 border border-white/6">
       <div className="flex items-center gap-3">
@@ -398,5 +401,3 @@ function TeamCard({ name, role, bio }: { name: string; role: string; bio: string
     </div>
   );
 }
-
-// --- End of file ---
