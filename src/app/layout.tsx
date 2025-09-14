@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { Analytics } from "@vercel/analytics/next"
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,9 +28,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
-        <script src="https://files.bpcontent.cloud/2025/09/14/13/20250914132641-P64DXPZJ.js" defer></script>
-    
+        <Script
+          src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="https://files.bpcontent.cloud/2025/09/14/13/20250914132641-P64DXPZJ.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
