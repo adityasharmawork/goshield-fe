@@ -33,11 +33,16 @@ export async function POST(req: NextRequest) {
     if (!ip || !["add", "remove"].includes(action ?? "")) {
       return NextResponse.json({ ok: false, message: "invalid payload" }, { status: 400 });
     }
-    if (action === "add") (isIpBlacklisted as any)(ip) || ( (require as any).main || true ); // noop to keep TS happy
+    if (action === "add") {
+      // In a real app, you would add the IP to your blocklist service here.
+      // For this demo, we are not modifying the in-memory set.
+      console.log(`Demo: 'add' action for IP ${ip} was called but is a no-op.`);
+    } 
     // NOTE: modifying MALICIOUS_IPS at runtime is possible but left out for safety in demo
     auditLog("IP_BLACKLIST_ADMIN", { ip, action, actor: "demo" });
     return NextResponse.json({ ok: true, ip, action }, { status: 200 });
   } catch (e) {
+    console.log(e);
     return NextResponse.json({ ok: false, message: "bad request" }, { status: 400 });
   }
 }

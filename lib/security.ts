@@ -34,7 +34,7 @@ export function getCookieValue(req: NextRequest, name: string): string | undefin
   try {
     // NextRequest.cookies.get returns { name, value } | undefined
     // Types can vary across Next.js versions; use safe access
-    const c = (req as any).cookies?.get?.(name);
+    const c = req.cookies?.get?.(name);
     if (!c) return undefined;
     return typeof c === "string" ? c : c?.value;
   } catch {
@@ -132,7 +132,7 @@ if (typeof setInterval !== "undefined") {
 }
 
 /* Lightweight audit logger */
-export function auditLog(tag: string, data: Record<string, any>) {
+export function auditLog(tag: string, data: Record<string, unknown>) {
   // Replace with structured logging in prod
   try {
     console.log(`[SEC][${new Date().toISOString()}][${tag}]`, JSON.stringify(data));
