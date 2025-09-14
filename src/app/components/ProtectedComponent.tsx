@@ -51,10 +51,14 @@ export default function ProtectedContent() {
         setStatus('All security checks passed. Access granted.');
         setIsVerified(true);
 
-      } catch (err: any) {
-        setError(err.message);
-        setStatus('Access Denied');
-      }
+      } catch (err: unknown) {
+            if (err instanceof Error) {
+                setError(err.message);
+            } else {
+                setError(String(err)); // Convert the unknown error to a string
+            }
+            setStatus('Access Denied');
+        }
     };
 
     runSecurityChecks();
