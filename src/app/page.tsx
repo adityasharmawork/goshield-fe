@@ -878,7 +878,7 @@ const DashboardCard = () => (
           </div>
           <div>
             <div className="text-sm text-slate-300">Protected Asset</div>
-            <div className="font-semibold text-slate-100">api.goshield.com</div>
+            <div className="font-semibold text-slate-100">https://goshield-fe.vercel.app</div>
           </div>
         </div>
       </div>
