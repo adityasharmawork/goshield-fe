@@ -556,7 +556,7 @@ const protectedSites = [
   {
     id: "drdo-site",
     name: "DRDO Website",
-    description: "Event portal for SIH with public-facing services.",
+    description: "Official Portal of Government of India DRDO Website",
     url: "https://goshield-fe.vercel.app/drdo",
   },
 ];
