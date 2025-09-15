@@ -1102,11 +1102,11 @@ const Header = () => (
         <div className="font-extrabold tracking-tight text-xl">GoShield</div>
       </div>
       <nav className="hidden md:flex items-center gap-8 text-sm text-slate-300">
-        <Link href="/" className="hover:text-white transition-colors">Home</Link>
-        <Link href="/solutions" className="hover:text-white transition-colors">Solutions</Link>
-        <Link href="/docs" className="hover:text-white transition-colors">Docs</Link>
-        <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
-        <Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link>
+        <a className="hover:text-white transition-colors">Home</a>
+        <a className="hover:text-white transition-colors">Solutions</a>
+        <a className="hover:text-white transition-colors">Docs</a>
+        <a className="hover:text-white transition-colors">About Us</a>
+        <a className="hover:text-white transition-colors">Contact Us</a>
       </nav>
       <motion.button
         whileHover={{ scale: 1.05 }}
